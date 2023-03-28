@@ -1,0 +1,85 @@
+body{ background-color: black;}
+
+.wrapper{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    }
+
+    .imgarea{
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 1s;}  
+
+    .imgarea img{
+            position: relative;
+            height: 100px;
+            margin-left: 6px;
+            transition: 1s;
+            }
+    
+            /* to allow logo to increase in size when a mouse is moved*/
+            .imgarea img.Logo:hover{
+                transform: scale(2) rotate(360deg);background-color: white;
+                
+            }
+
+/*To h2 to change font and to move from right to left*/
+            h2{
+                position: relative;
+                font-size: 110px;
+                -webkit-text-stroke: 0.3vw black; 
+                color: black
+                ;
+            }
+
+            
+/*   -webkit-text-stroke specifies the width and color of strokes for text characters. */ 
+h2::before{
+                content: attr(data-text); 
+                position:absolute;
+                top: 0;
+                left:0;
+                width:100%;
+                height: 100%;
+                color: white;
+                -webkit-text-stroke: 0vw black;
+                border-right: 3px solid black;
+                animation: animate 6s ease-in-out 2 normal 0s;
+                overflow: hidden;
+            }
+            
+            @keyframes animate {
+            0%, 10%, 100%{ width: 0%;opacity: 0; color: white;}
+                
+            70% , 90%{ width:100%;
+            opacity: 1; color: rgba(38, 27, 142, 0.748);}
+            
+            }
+            
+            @keyframes size {
+                0%{ }
+                
+            }
+            .Logo{
+                height: 200px;
+                margin-left: 6px;
+                border-radius: 10px;
+                animation: logoIn 5s ease-in 2 normal 0s
+            
+            }
+            
+            @keyframes logoIn {
+                0%{ opacity: 0; transform: scale(3) rotate(360deg);background-color:white;}
+                50%{ opacity: 0.7;background-color: black; }
+                100%{ opacity: 1;background-color: white;}
+                
+            }
+            
+                
+            
+            
